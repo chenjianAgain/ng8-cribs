@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { cribs } from './data/cribs';
+// import { cribs } from '../data/cribs';
 
 @Component({
   selector: 'app-root',

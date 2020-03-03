@@ -1,4 +1,4 @@
-export const videos = [
+[
   {
     "title": "khmer-2018030702 前田香織グループ・シーンで日本を吹き飛ばす",
     "keyword": "khmer jav Kaori Maeda",
@@ -94,4 +94,4 @@ export const videos = [
     "vid": "43246",
     "uid": "136500"
   }
-];
+]
