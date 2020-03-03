@@ -14,7 +14,7 @@ export class CribListingComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('data/videos.json').subscribe((data: Array<any>) => this.videos = data);
+    this.http.get('https://raw.githubusercontent.com/chenjianAgain/ng8-cribs/master/src/data/videos.json').subscribe((data: Array<any>) => this.videos = data);
   }
 
 }
