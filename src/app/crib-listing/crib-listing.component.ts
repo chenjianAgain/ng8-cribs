@@ -10,11 +10,12 @@ export class CribListingComponent implements OnInit {
 
   // cribs: Array<any> = cribs;
   videos: Array<any>;
+  videosUrl = 'https://raw.githubusercontent.com/chenjianAgain/ng8-cribs/master/src/data/videos.json';
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('https://raw.githubusercontent.com/chenjianAgain/ng8-cribs/master/src/data/videos.json').subscribe((data: Array<any>) => this.videos = data);
+    this.http.get(this.videosUrl).subscribe((data: Array<any>) => this.videos = data);
   }
 
 }
