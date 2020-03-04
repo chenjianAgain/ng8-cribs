@@ -18,20 +18,19 @@ export class CribListingComponent implements OnInit {
   }
 
   onClickMe(event: Event) {
-    // console.log((<HTMLInputElement>event.target).value);
-    // console.log((event.target as HTMLButtonElement).innerHTML);
-    var keyword = (event.target as HTMLButtonElement).innerHTML;
-    console.log(keyword);
-    if (keyword !== 'Search') {
-      this.request(keyword, 0, 10);
+    var query = (event.target as HTMLButtonElement).innerHTML;
+    console.log(query);
+    console.log(query);
+    if (query !== 'Search') {
+      this.request(query, 0, 5);
     }
   }
 
-  request(keyword?: string, offset?: number, limit?: number) {
-    this.http.get(this.getUrl(keyword, offset, limit)).subscribe(data => this.videos = data['response']['videos']);
+  request(query?: string, page?: number, limit?: number) {
+    this.http.get(this.getUrl(query, page, limit)).subscribe(data => this.videos = data['response']['videos']);
   }
 
-  getUrl(keyword = 'Kaori', offset = 1, limit = 1) {
-    return `https://api.avgle.com/v1/search/${keyword}/${offset}?limit=${limit}`;
+  getUrl(query = 'Kaori', page = 1, limit = 1) {
+    return `https://api.avgle.com/v1/search/${query}/${page}?limit=${limit}`;
   }
 }
