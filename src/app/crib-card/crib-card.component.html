@@ -1,68 +1,14 @@
 
 <!--<div class="thumbnail"><p>crib-card works!</p></div>-->
 <div class="thumbnail">
-  <img src="{{ video.preview_url }}" alt="crib thumbnail">
+  <img src="{{ video['preview_url'] }}" alt="crib thumbnail">
 <!--  <div>{{video.title}}</div>-->
-  <a href="{{ video.video_url }}">
+  <a href="{{ video['video_url'] }}">
     <div class="video-title title-truncate m-t-5">{{video.title}} </div>
   </a>
   <div class="video-title title-truncate m-t-5">{{ getTimeDiff(video.addtime) }} 天 前</div>
   <div>点击数：{{ video.viewnumber}}</div>
   <div> {{ getPercentage(video.likes, video.dislikes)}}%</div>
 
-  <!--  <div class="caption">-->
-<!--    <div *ngIf="!crib.showDetails">-->
-<!--      <h4>-->
-<!--        <span class="label label-primary">-->
-<!--          {{ crib.type }}-->
-<!--        </span>-->
-<!--      </h4>-->
-<!--      <h3>-->
-<!--        <i class="glyphicon glyphicon-tag"></i>-->
-<!--        {{ crib.price | currency:'USD':true }}-->
-<!--      </h3>-->
-<!--      <h4>-->
-<!--        <i class="glyphicon glyphicon-home"></i>-->
-<!--        {{ crib.address }}-->
-<!--      </h4>-->
-
-<!--      <hr>-->
-
-<!--      <button-->
-<!--        class="btn btn-sm btn-success"-->
-<!--        *ngIf="!crib.showDetails"-->
-<!--        (click)="crib.showDetails = !crib.showDetails">-->
-<!--        Details-->
-<!--      </button>-->
-
-<!--    </div>-->
-
-<!--    <div *ngIf="crib.showDetails">-->
-<!--      <div class="details">-->
-<!--        <h4>-->
-<!--          <span class="label label-primary">-->
-<!--            Beds: {{ crib.bedrooms }}-->
-<!--          </span>-->
-<!--          <span class="label label-primary">-->
-<!--            Baths: {{ crib.bathrooms }}-->
-<!--          </span>-->
-<!--          <span class="label label-primary">-->
-<!--            SqFt: {{ crib.area }}-->
-<!--          </span>-->
-<!--        </h4>-->
-
-<!--        <p>{{ crib.description }}</p>-->
-
-<!--        <hr>-->
-
-<!--        <button-->
-<!--          class="btn btn-sm btn-danger"-->
-<!--          (click)="crib.showDetails = !crib.showDetails">-->
-<!--          Close-->
-<!--        </button>-->
-
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
 </div>
 

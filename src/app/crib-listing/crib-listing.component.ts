@@ -10,13 +10,28 @@ export class CribListingComponent implements OnInit {
 
   // cribs: Array<any> = cribs;
   videos: Array<any>;
-  videosUrl = 'https://api.avgle.com/v1/search/%E5%89%8D%E7%94%B0/0?limit=10';
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get(this.videosUrl).subscribe(data => this.videos = data['response']['videos']);
-    // this.http.get(this.videosUrl).subscribe((data: Object) => this.videos = data.response.videos);
+    this.request();
   }
 
+  onClickMe(event: Event) {
+    // console.log((<HTMLInputElement>event.target).value);
+    // console.log((event.target as HTMLButtonElement).innerHTML);
+    var keyword = (event.target as HTMLButtonElement).innerHTML;
+    console.log(keyword);
+    if (keyword !== 'Search') {
+      this.request(keyword, 0, 10);
+    }
+  }
+
+  request(keyword?: string, offset?: number, limit?: number) {
+    this.http.get(this.getUrl(keyword, offset, limit)).subscribe(data => this.videos = data['response']['videos']);
+  }
+
+  getUrl(keyword = 'Kaori', offset = 1, limit = 1) {
+    return `https://api.avgle.com/v1/search/${keyword}/${offset}?limit=${limit}`;
+  }
 }
