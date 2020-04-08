@@ -15,9 +15,8 @@ export class CribCardComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // var t3="2017-08-18 04:56:38";
-    // this.timeFn(t3);
   }
+
 
   getPercentage(like, dislike) {
     return Math.floor(like / (like + dislike) * 100);

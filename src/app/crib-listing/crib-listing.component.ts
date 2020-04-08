@@ -19,8 +19,6 @@ export class CribListingComponent implements OnInit {
 
   onClickMe(event: Event) {
     var query = (event.target as HTMLButtonElement).innerHTML;
-    console.log(query);
-    console.log(query);
     if (query !== 'Search') {
       this.request(query, 0, 5);
     }
